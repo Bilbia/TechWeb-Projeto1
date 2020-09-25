@@ -12,11 +12,11 @@
 
 
 <body>
-<div class="bg-dark vh-100" >
+<div class="bg-dark vh-100 container-fluid" >
 <h2 class="text-light" style="padding: 0.5rem;"> Editando Nota </h2>
 <div style="margin-top:20px"></div>
 
-<form action='Update' method='post' style="margin: 0.5rem;">
+<form action='Update' method='post'>
 <input type='text' name='title' value='${param.title }' class="form-control"><br>
 <input type='text' name='texto' value='${param.texto }' class="form-control"><br>
 <input type='text' name='categoria' value='${param.categoria }' class="form-control"><br>

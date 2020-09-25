@@ -10,9 +10,9 @@
 <title>Cadastro</title>
 </head>
 <body>
-<div class="bg-dark vh-100">
-<h2 class="text-light">Cadastre um usuário</h2>
-
+<div class="bg-dark vh-100 container-fluid">
+<h2 class="text-light" style="padding:0.5rem;">Cadastre um usuário</h2>
+<div style="margin-top:20px"></div>
 <form action="Cadastro" method='post'>
 <input type='text' placeholder='Enter Username' name='username' class="form-control"><br>
 <input type='password' placeholder='Enter Password' name='password' class="form-control"><br>

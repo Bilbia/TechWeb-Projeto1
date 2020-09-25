@@ -14,8 +14,8 @@
 
 
 <body>
-	<div class="bg-dark vh-100">
-	<h2 class="text-light"> Login </h2>
+	<div class="bg-dark vh-100 container-fluid">
+	<h2 class="text-light" style="padding:0.5rem;"> Login </h2>
 	<div style="margin-top:20px"></div>
 	
 	<form action="Login" method='post'>

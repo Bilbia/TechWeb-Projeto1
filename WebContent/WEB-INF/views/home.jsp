@@ -9,7 +9,7 @@
 <meta charset="ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-<title>Notas</title>
+<title>Home</title>
 </head>
 
 
@@ -17,8 +17,15 @@
 <jsp:useBean id="dao" class="mvc.model.DAO"/>
 
 <div class="bg-dark container-fluid">
-<h2 class=text-light style="padding:1rem;"> Bem Vindo, <%=(String)session.getAttribute("username")%></h2>
 
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand">Bem Vindo, <%=(String)session.getAttribute("username")%></a>
+  <form class="form-inline" action="Pesquisa" method='post'>
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" name="pesquisa">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form>
+</nav>
+<div style="margin-top:10px"></div>
 <form action="Cria" method='get'>
 		<button type='submit' class="btn btn-secondary btn-block" > Nova Nota </button>
 </form>
@@ -33,7 +40,7 @@
 	<h5 class="card-title">${note.title}</h5>
 	</c:if>
 	<p class="card-text">${note.texto}</p>
-	<p class="card-text"><small class="text-muted">${note.date}	- by ${note.user}</small></p>
+	<p><small class="text-muted">${note.date} - ${note.categoria} - by ${note.user} </small></p>
 	<div class="container"><div class="well">	 
 	<form action="Deleta" method='post' style="display: table-cell; padding-left:0.5rem; padding-rigt:0.5rem;">
 		<input type="hidden" name='id' value='${note.id}'>

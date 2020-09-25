@@ -101,5 +101,27 @@ public class DAO {
 		stmt.close();
 	}
 	
+	public List<Note> pesquisa(String string) throws SQLException {
+		PreparedStatement stmt = connection.prepareStatement("SELECT * FROM Notes WHERE title LIKE '%"+string+"%' or texto LIKE '%"+string+"%'");
+		ResultSet rs = stmt.executeQuery();
+		List<Note> results = new ArrayList<Note>();
+		while (rs.next()) {
+			Note note = new Note();
+			note.setId(rs.getInt("id"));
+			note.setTitle(rs.getString("title"));
+			note.setTexto(rs.getString("texto"));
+			note.setCategoria(rs.getString("categoria"));
+			note.setDate(rs.getDate("data"));
+			note.setUser(rs.getNString("user"));
+			results.add(note);
+			}
+		
+		rs.close();
+		stmt.close();
+		
+		return results;
+		
+	}
+	
 
 }

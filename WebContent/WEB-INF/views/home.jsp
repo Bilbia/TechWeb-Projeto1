@@ -40,7 +40,9 @@
 	<h5 class="card-title">${note.title}</h5>
 	</c:if>
 	<p class="card-text">${note.texto}</p>
-	<p><small class="text-muted">${note.date} - ${note.categoria} - by ${note.user} </small></p>
+	<p><small class="text-muted">${note.date} 
+	<c:if test="${not empty note.categoria}">- ${note.categoria} 
+	</c:if>- by ${note.user} </small></p>
 	<div class="container"><div class="well">	 
 	<form action="Deleta" method='post' style="display: table-cell; padding-left:0.5rem; padding-rigt:0.5rem;">
 		<input type="hidden" name='id' value='${note.id}'>

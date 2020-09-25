@@ -13,7 +13,7 @@
 
 
 <body>
-<div class="bg-dark vh-100 container-fluid" >
+<div class="bg-dark container-fluid" style="min-height: 100vh;" >
 <nav class="navbar navbar-dark bg-dark">
   <a class="navbar-brand">Bem Vindo, <%=(String)session.getAttribute("username")%></a>
   <form class="form-inline" action="Pesquisa" method='post'>
@@ -38,8 +38,9 @@
 	<h5 class="card-title">${note.title}</h5>
 	</c:if>
 	<p class="card-text">${note.texto}</p>
-	<p class="card-text"><small class="text-muted">${note.date} - ${note.categoria}	- by ${note.user}</small></p>
-	<div class="container"><div class="well">	 
+<p><small class="text-muted">${note.date} 
+	<c:if test="${not empty note.categoria}">- ${note.categoria} 
+	</c:if>- by ${note.user} </small></p>	<div class="container"><div class="well">	 
 	<form action="Deleta" method='post' style="display: table-cell; padding-left:0.5rem; padding-rigt:0.5rem;">
 		<input type="hidden" name='id' value='${note.id}'>
 		<button type='submit' class="btn btn-secondary btn-sm"> Del </button>

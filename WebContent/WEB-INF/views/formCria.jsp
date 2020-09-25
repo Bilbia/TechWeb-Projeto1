@@ -12,7 +12,7 @@
 
 
 <body>
-<div class="bg-dark vh-100" >
+<div class="bg-dark vh-100 container-fluid" >
 <h2 class="text-light" style="padding: 0.5rem;"> Nova Nota </h2>
 <div style="margin-top:20px"></div>
 

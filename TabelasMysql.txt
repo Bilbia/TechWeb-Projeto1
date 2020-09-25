@@ -1,0 +1,13 @@
+===========================================================
+
+Código para a criação da database e das tabelas necessárias
+
+===========================================================
+
+CREATE DATABASE Projeto1;
+
+USE DATABASE Projeto1;
+
+CREATE TABLE Notes (id INT NOT NULL AUTO_INCREMENT, title VARCHAR(32), texto TEXT NOT NULL, categoria VARCHAR(32), data DATE, user VARCHAR(32), PRIMARY KEY(id));
+
+CREATE TABLE User (idUser INT NOT NULL AUTO_INCREMENT, username VARCHAR(32) NOT NULL, password VARCHAR(32) NOT NULL, PRIMARY KEY(idUser));
